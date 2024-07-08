@@ -18,5 +18,5 @@ jobs:
             run: 7z a InkTracker.zip * -xr!*.git* -xr!*.vscode*
 
           - name: 'ESO UI Publish'
-            run: ls -la
-           
+            run: cat InkTracker/InkTracker.txt
+          
