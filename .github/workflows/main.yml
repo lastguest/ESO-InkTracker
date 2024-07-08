@@ -17,16 +17,6 @@ jobs:
           - name: 'Zip release'
             run: 7z a InkTracker.zip * -xr!*.git* -xr!*.vscode*
 
-          #Optional: Attaches the generated zip to the GitHub release (before uploading to ESO UI)
-          - name: 'Attach zip to release'
-            uses: svenstaro/upload-release-action@v2
-            with:
-              asset_name: InkTracker.zip
-              file: InkTracker.zip
-              repo_token: ${{ secrets.GITHUB_TOKEN }}
-              tag: ${{ github.ref }}
-              overwrite: true
-
           - name: 'ESO UI Publish'
             uses: lastguest/esoui-deploy-action@main
             with:
