@@ -18,5 +18,17 @@ jobs:
             run: 7z a InkTracker.zip * -xr!*.git* -xr!*.vscode*
 
           - name: 'ESO UI Publish'
-            run: cd InkTracker && ls -la
+            uses: lastguest/esoui-deploy-action@main
+            with:
+              #Inside the folder configured above, this should be the add-on definition txt file (that has Title, Description, files, ect.)
+              addon-file-path: ./InkTracker/InkTracker/InkTracker.txt 
+              #Match generated zip file name above
+              upload-zip-path: InkTracker.zip
+              #Add-on ID from ESO UI
+              addon-id: 3924 
+              #ESO UI API Key, should be stored in GitHub secrets
+              eso-ui-api-key: ${{secrets.ESOUI_API_TOKEN}}
+              github-api-key: ${{secrets.GITHUB_TOKEN}}
+              #Optional: If true will hit the update test URL, rather than doing an actual update to the add-on
+              test-only: true
           
