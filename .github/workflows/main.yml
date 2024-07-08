@@ -18,6 +18,7 @@ jobs:
             run: 7z a InkTracker.zip * -xr!*.git* -xr!*.vscode*
 
           - name: 'ESO UI Publish'
+            run: ls -la
             uses: lastguest/esoui-deploy-action@main
             with:
               #Inside the folder configured above, this should be the add-on definition txt file (that has Title, Description, files, ect.)
