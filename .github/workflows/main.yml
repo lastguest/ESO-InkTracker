@@ -2,6 +2,7 @@ name: Build zip and upload to ESO UI
 on: 
   release:
     types: [published]
+  workflow_dispatch:
 
 jobs:
     build-and-upload:
