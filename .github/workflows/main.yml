@@ -15,7 +15,7 @@ jobs:
         
           #Zips the release, excluding .git* and .vscode files
           - name: 'Zip release'
-            run: 7z a InkTracker.zip ./src/* -xr!*.git* -xr!*.vscode*
+            run: 7z a InkTracker.zip * -xr!*.git* -xr!*.vscode*
 
           #Optional: Attaches the generated zip to the GitHub release (before uploading to ESO UI)
           - name: 'Attach zip to release'
