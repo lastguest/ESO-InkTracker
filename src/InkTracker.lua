@@ -1,4 +1,5 @@
 --- InkTracker AddOn by lastguest
+--- https://github.com/lastguest/ESO-InkTracker
 
 InkTracker = {}
 
